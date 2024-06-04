@@ -27,6 +27,7 @@ console.log("il risultato del prezzo viaggio tot è: ", risultatoPrezzoKmBase);
 
 // va applicato uno sconto del 20% per i minorenni
 const scontoMinorenni = 0.20;
+ // va applicato uno sconto del 40% per gli over 65.
 const scontoMaggiore = 0.40;
 
 if (ageUtente < 18) {
