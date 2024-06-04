@@ -20,40 +20,35 @@ console.log("l'età dell'utente è:", ageUtente);
 // il prezzo del biglietto è definito in base ai km (0.21 € al km)
 const  prezzoKm = 0.21;
 
- let risultatoPrezzoKmBase = prezzoKm * kmUtente;
+let risultatoPrezzoKmBase = prezzoKm * kmUtente;
 
 console.log("il risultato del prezzo viaggio tot è: ", risultatoPrezzoKmBase);
 
 
 // va applicato uno sconto del 20% per i minorenni
-const scontoMinorenni = 0.20; 
+const scontoMinorenni = 0.20;
+const scontoOver = 0.40;  
 
 if (ageUtente < 18) {
   
     let scontoFinaleMinori = risultatoPrezzoKmBase *(1 - scontoMinorenni);
     console.log("il prezzo finale con sconto del 20% minorenni è:", scontoFinaleMinori );
-    totaleminore = scontoFinaleMinori.toFixed(2);
-}else {
+    totale = scontoFinaleMinori;
+}else if (ageUtente > 18) {
     console.log("Il prezzo finale x sconto non applicato se si è >=18 è:",  risultatoPrezzoKmBase );
-    totalebase = risultatoPrezzoKmBase.toFixed(2);
-}
+    totale = risultatoPrezzoKmBase;
 
-
-// va applicato uno sconto del 40% per gli over 65.
-
-const scontoOver = 0.40; 
-
-if (ageUtente > 65) {
-  
+    // va applicato uno sconto del 40% per gli over 65.
+}else  {
+    (ageUtente > 65)
     let scontoFinaleOver = risultatoPrezzoKmBase *(1 - scontoOver);
 
     console.log("il prezzo finale con sconto del 40% Over 65 è:", scontoFinaleOver);
-    totaleover = scontoFinaleOver.toFixed(2);
-}else {
-    console.log("Il prezzo finale x sconto non applicato se si è >=65 è:",  risultatoPrezzoKmBase );
-    totalebase = risultatoPrezzoKmBase.toFixed(2);
-}
+    totale = scontoFinaleOver; 
+  }
+
+
 // L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
 
-document.getElementById("prezzoutente").innerHTML = totalebase, totaleminore, totaleover;
+document.getElementById("prezzoutente").innerHTML = totale;
 
