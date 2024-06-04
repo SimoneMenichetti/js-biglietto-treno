@@ -49,9 +49,6 @@ if (ageUtente < 18) {
     (ageUtente > 17 < 66)
     console.log("Il prezzo finale x sconto non applicato se si è >=18 è:",  risultatoPrezzoKmBase );
     totale = risultatoPrezzoKmBase;
-
-    // va applicato uno sconto del 40% per gli over 65.
-   
 }
 // L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
 
