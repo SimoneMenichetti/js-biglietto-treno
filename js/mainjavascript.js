@@ -18,25 +18,24 @@ console.log("l'età dell'utente è:", ageUtente);
 // il prezzo del biglietto è definito in base ai km (0.21 € al km)
 const  prezzoKm = 0.21;
 
- let risultatoPrezzoKm = prezzoKm * kmUtente;
+ let risultatoPrezzoKmBase = prezzoKm * kmUtente;
 
-console.log("il risultato del prezzo viaggio tot è: ", risultatoPrezzoKm);
+console.log("il risultato del prezzo viaggio tot è: ", risultatoPrezzoKmBase);
 
 
 // va applicato uno sconto del 20% per i minorenni
-const scontoMinorenni = 0.20 
+const scontoMinorenni = 0.20; 
 
 if (ageUtente < 18) {
   
-    // let scontoFinaleMinorenni = 
+    let scontoFinaleMinori = risultatoPrezzoKmBase *(1 - scontoMinorenni);
+    console.log("il prezzo finale con sconto del 20% minorenni è:", scontoFinaleMinori + "euro");
+}else {
+    console.log("Il prezzo finale x sconto non applicato se si è >=18 è:",  risultatoPrezzoKmBase + "euro");
 }
-
-// } else (ageUtente >= 18 && ageUtente < 65 ) {
-//     sconto= "lo sconto non viene applicato";
-// }
-
-
 
 
 // va applicato uno sconto del 40% per gli over 65.
+
+
 // L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
