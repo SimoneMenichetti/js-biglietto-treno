@@ -1,4 +1,6 @@
-
+let  totaleminore;
+let totalebase;
+let totaleover;
 
 // chiedere all’utente il numero di chilometri che vuole percorrere
 
@@ -29,9 +31,11 @@ const scontoMinorenni = 0.20;
 if (ageUtente < 18) {
   
     let scontoFinaleMinori = risultatoPrezzoKmBase *(1 - scontoMinorenni);
-    console.log("il prezzo finale con sconto del 20% minorenni è:", scontoFinaleMinori + "euro");
+    console.log("il prezzo finale con sconto del 20% minorenni è:", scontoFinaleMinori );
+    totaleminore = scontoFinaleMinori.toFixed(2);
 }else {
-    console.log("Il prezzo finale x sconto non applicato se si è >=18 è:",  risultatoPrezzoKmBase + "euro");
+    console.log("Il prezzo finale x sconto non applicato se si è >=18 è:",  risultatoPrezzoKmBase );
+    totalebase = risultatoPrezzoKmBase.toFixed(2);
 }
 
 
@@ -43,8 +47,13 @@ if (ageUtente > 65) {
   
     let scontoFinaleOver = risultatoPrezzoKmBase *(1 - scontoOver);
 
-    console.log("il prezzo finale con sconto del 40% Over 65 è:", scontoFinaleOver  + "euro");
+    console.log("il prezzo finale con sconto del 40% Over 65 è:", scontoFinaleOver);
+    totaleover = scontoFinaleOver.toFixed(2);
 }else {
-    console.log("Il prezzo finale x sconto non applicato se si è >=65 è:",  risultatoPrezzoKmBase + "euro");
+    console.log("Il prezzo finale x sconto non applicato se si è >=65 è:",  risultatoPrezzoKmBase );
+    totalebase = risultatoPrezzoKmBase.toFixed(2);
 }
 // L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
+
+document.getElementById("prezzoutente").innerHTML = totalebase, totaleminore, totaleover;
+
