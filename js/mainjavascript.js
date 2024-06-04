@@ -54,5 +54,5 @@ if (ageUtente < 18) {
 }
 // L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
 
-document.getElementById("prezzoutente").innerHTML = totale.toFixed(2);
+document.getElementById("prezzoutente").innerHTML ="Totale =  " + totale.toFixed(2) + " euro";
 
